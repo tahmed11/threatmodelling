@@ -86,6 +86,10 @@
                 {
                   "x": 392,
                   "y": 77
+                },
+                {
+                  "x": 442,
+                  "y": 80
                 }
               ],
               "id": "aaf63304-c6fa-4ca9-8074-8a5218e917ed",
@@ -245,6 +249,10 @@
               },
               "vertices": [
                 {
+                  "x": 501,
+                  "y": 198
+                },
+                {
                   "x": 499,
                   "y": 219
                 },
@@ -270,15 +278,23 @@
                 }
               ],
               "z": 7,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "protocol": "HTTP",
               "isEncrypted": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "title": "spoofing"
+                }
+              ],
               "attrs": {
                 ".marker-target": {
-                  "class": "marker-target hasNoOpenThreats isInScope"
+                  "class": "marker-target hasOpenThreats isInScope"
                 },
                 ".connection": {
-                  "class": "connection hasNoOpenThreats isInScope"
+                  "class": "connection hasOpenThreats isInScope"
                 }
               }
             },
