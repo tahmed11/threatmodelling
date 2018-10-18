@@ -130,6 +130,26 @@
                   "title": "Similar as spoofing",
                   "description": "repudiation - for example client placing an order but denying that the order was placed.",
                   "mitigation": "authentication between client an FIX gateway before transaction can occur."
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "title": "Information disclosure about the system and other clients"
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "title": "Client sending large number of traffic to the FIX gateway",
+                  "mitigation": "FIX gateway - not opened to the internet.\nLoadbalancer to reduce impact to DoS\nFirewall to filter traffic",
+                  "description": "client sending large amount of traffic to the FIX gateway so ANX cannt process legitimate request"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Elevation of privilege",
+                  "title": "Client can elevate privileges on the FIX gateway."
                 }
               ],
               "attrs": {
