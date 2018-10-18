@@ -332,12 +332,52 @@
                   "class": "connection hasNoOpenThreats isInScope"
                 }
               }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "4786c1db-9f4d-46af-b2df-05828ce54123"
+              },
+              "target": {
+                "x": 812,
+                "y": 62
+              },
+              "vertices": [
+                {
+                  "x": 814,
+                  "y": 183
+                }
+              ],
+              "id": "bbd60a41-465d-426a-ace8-b67afb82b1f2",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "MQ (Encrypted?)",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 9,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
             }
           ]
         },
         "size": {
           "height": 3443.0341796875,
-          "width": 845
+          "width": 849
         }
       }
     ]
