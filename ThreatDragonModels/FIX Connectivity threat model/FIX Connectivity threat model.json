@@ -10,7 +10,265 @@
       {
         "title": "FIX diagram",
         "thumbnail": "./public/content/images/thumbnail.jpg",
-        "id": 0
+        "id": 0,
+        "diagramJson": {
+          "cells": [
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 53,
+                "y": 45
+              },
+              "angle": 0,
+              "id": "2e133cdc-a9dc-4a3d-9347-dee6505ab535",
+              "z": 1,
+              "hasOpenThreats": false,
+              "outOfScope": true,
+              "reasonOutOfScope": "Client can use any FIX client they want",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isOutOfScope"
+                },
+                "text": {
+                  "text": "Client - FIX Client"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 462,
+                "y": 27
+              },
+              "angle": 0,
+              "id": "f6b63756-1834-4c65-8524-a53a60b4ceda",
+              "z": 2,
+              "hasOpenThreats": false,
+              "privilegeLevel": "Low",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "FIX Gateway"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "x": 211,
+                "y": 81
+              },
+              "target": {
+                "id": "f6b63756-1834-4c65-8524-a53a60b4ceda"
+              },
+              "vertices": [],
+              "id": "aaf63304-c6fa-4ca9-8074-8a5218e917ed",
+              "labels": [
+                {
+                  "position": {
+                    "distance": 0.5017711690027526,
+                    "offset": -1.7184020068962127
+                  },
+                  "attrs": {
+                    "text": {
+                      "text": "FIX Protocol",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 3,
+              "hasOpenThreats": false,
+              "protocol": "FIX",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Boundary",
+              "smooth": true,
+              "source": {
+                "x": 343,
+                "y": 3
+              },
+              "target": {
+                "x": 340,
+                "y": 161
+              },
+              "vertices": [
+                {
+                  "x": 311,
+                  "y": 85
+                }
+              ],
+              "id": "ea454d52-8fc5-4679-81a1-41e1af149c12",
+              "z": 4,
+              "attrs": {}
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 628,
+                "y": 187
+              },
+              "angle": 0,
+              "id": "4786c1db-9f4d-46af-b2df-05828ce54123",
+              "z": 5,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Engine Service"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 711,
+                "y": 12
+              },
+              "angle": 0,
+              "id": "b95101ec-0769-415e-83ae-51a5eaee4f55",
+              "z": 6,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "MarketGrid"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "f6b63756-1834-4c65-8524-a53a60b4ceda"
+              },
+              "target": {
+                "id": "4786c1db-9f4d-46af-b2df-05828ce54123"
+              },
+              "vertices": [
+                {
+                  "x": 499,
+                  "y": 219
+                },
+                {
+                  "x": 508,
+                  "y": 290
+                }
+              ],
+              "id": "2208e4e7-76fa-4b3b-8cd5-b7d3f6254728",
+              "labels": [
+                {
+                  "position": {
+                    "distance": 0.46220481593444585,
+                    "offset": -0.1576304929330945
+                  },
+                  "attrs": {
+                    "text": {
+                      "text": "Auth (HTTPS?)",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 7,
+              "hasOpenThreats": false,
+              "protocol": "HTTP",
+              "isEncrypted": true,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "f6b63756-1834-4c65-8524-a53a60b4ceda"
+              },
+              "target": {
+                "id": "b95101ec-0769-415e-83ae-51a5eaee4f55"
+              },
+              "vertices": [],
+              "id": "c2a92d1f-cfe2-428a-9f87-5a493c7c27e0",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "API (HTTP?)",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 8,
+              "hasOpenThreats": false,
+              "protocol": "HTTP",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            }
+          ]
+        },
+        "size": {
+          "height": 3443.0341796875,
+          "width": 845
+        }
       }
     ]
   }
