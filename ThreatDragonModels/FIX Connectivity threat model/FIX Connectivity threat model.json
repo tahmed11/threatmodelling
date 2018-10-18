@@ -425,13 +425,23 @@
                 }
               ],
               "z": 9,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "title": "Spoofing of messages from MG to Engine service and vice versa.",
+                  "description": "rogue system can send rogue messages (such as place an order) to Engine service pretending to be market grid.",
+                  "mitigation": "Use authentication checks before any sensitive operations."
+                }
+              ],
               "attrs": {
                 ".marker-target": {
-                  "class": "marker-target hasNoOpenThreats isInScope"
+                  "class": "marker-target hasOpenThreats isInScope"
                 },
                 ".connection": {
-                  "class": "connection hasNoOpenThreats isInScope"
+                  "class": "connection hasOpenThreats isInScope"
                 }
               }
             }
@@ -439,7 +449,7 @@
         },
         "size": {
           "height": 3443.0341796875,
-          "width": 849
+          "width": 866.8545532226562
         }
       }
     ]
