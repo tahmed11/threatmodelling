@@ -1,0 +1,17 @@
+{
+  "summary": {
+    "title": "FIX Connectivity threat model",
+    "owner": "Tanvir Ahmed",
+    "description": "FIX Connectivity threat model"
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "title": "FIX diagram",
+        "thumbnail": "./public/content/images/thumbnail.jpg",
+        "id": 0
+      }
+    ]
+  }
+}
