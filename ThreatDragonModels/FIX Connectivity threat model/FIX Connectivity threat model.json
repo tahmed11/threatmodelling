@@ -80,14 +80,6 @@
               },
               "vertices": [
                 {
-                  "x": 373,
-                  "y": 78
-                },
-                {
-                  "x": 392,
-                  "y": 77
-                },
-                {
                   "x": 442,
                   "y": 80
                 }
@@ -114,10 +106,10 @@
               "threats": [
                 {
                   "status": "Open",
-                  "severity": "Medium",
+                  "severity": "High",
                   "type": "Spoofing",
                   "title": "Spoofing FIX messages (one user pretending to be another user).",
-                  "mitigation": "Dedicated leased line between customer and FIX gateway. Still one client can spoof messages for another user."
+                  "mitigation": "Dedicated leased line between customer and FIX gateway (only selected users).\nPerform authentication and authorization of client before performing any sensitive operation."
                 },
                 {
                   "status": "Open",
@@ -131,9 +123,9 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Repudiation",
-                  "title": "Similar as spoofing",
+                  "title": "Repudiation of messages - Actor denying messages sent by them",
                   "description": "repudiation - for example client placing an order but denying that the order was placed.",
-                  "mitigation": "authentication between client an FIX gateway before transaction can occur."
+                  "mitigation": "authentication between client an FIX gateway before any sensitive operation occur."
                 },
                 {
                   "status": "Open",
@@ -145,7 +137,7 @@
                 },
                 {
                   "status": "Open",
-                  "severity": "High",
+                  "severity": "Low",
                   "type": "Denial of service",
                   "title": "Client sending large number of traffic to the FIX gateway",
                   "mitigation": "FIX gateway - not opened to the internet.\nLoadbalancer to reduce impact to DoS\nFirewall to filter traffic",
@@ -153,7 +145,7 @@
                 },
                 {
                   "status": "Open",
-                  "severity": "Medium",
+                  "severity": "Low",
                   "type": "Elevation of privilege",
                   "title": "Client can elevate privileges on the FIX gateway.",
                   "mitigation": "FIX gateway admin interface should be restricted to internal ANX network"
@@ -252,16 +244,8 @@
               },
               "vertices": [
                 {
-                  "x": 501,
-                  "y": 198
-                },
-                {
-                  "x": 499,
-                  "y": 219
-                },
-                {
-                  "x": 508,
-                  "y": 290
+                  "x": 550,
+                  "y": 232
                 }
               ],
               "id": "2208e4e7-76fa-4b3b-8cd5-b7d3f6254728",
@@ -335,11 +319,19 @@
               "target": {
                 "id": "b95101ec-0769-415e-83ae-51a5eaee4f55"
               },
-              "vertices": [],
+              "vertices": [
+                {
+                  "x": 633,
+                  "y": 44
+                }
+              ],
               "id": "c2a92d1f-cfe2-428a-9f87-5a493c7c27e0",
               "labels": [
                 {
-                  "position": 0.5,
+                  "position": {
+                    "distance": 0.5182267083698877,
+                    "offset": -15.03716728859581
+                  },
                   "attrs": {
                     "text": {
                       "text": "API (HTTP?)",
