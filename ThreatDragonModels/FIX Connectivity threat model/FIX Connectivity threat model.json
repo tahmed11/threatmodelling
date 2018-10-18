@@ -284,9 +284,34 @@
               "threats": [
                 {
                   "status": "Open",
-                  "severity": "Medium",
+                  "severity": "Low",
                   "type": "Spoofing",
-                  "title": "spoofing"
+                  "title": "Spoofing of data sent from FIX gateway to Engine Service",
+                  "mitigation": "Use HTTPS channel",
+                  "description": "Attacker sending forged authentication messages to Engine service"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "title": "Tampering of data sent between FIX gateway and Engine service",
+                  "mitigation": "Use encrypted channel such as HTTPS"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "title": "Information disclosure of the authentication details",
+                  "description": "Information disclosure can be through variety of methods such as unrestricted API, debugging message. In this case information disclosure can be through giving specific user details when authentication is unsuccessful such as \"Password is wrong\".  When authentication is done a generic error message should be provided such as \"invalid username/password\"",
+                  "mitigation": "Generic error message"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Denial of service",
+                  "title": "Denial of service by sending junk forged messages",
+                  "description": "flooding the engine service  system with junk authentication messages so legitimate authentication message will be denied",
+                  "mitigation": "Use API gateway with Denial of service protection or rate throttling requests."
                 }
               ],
               "attrs": {
