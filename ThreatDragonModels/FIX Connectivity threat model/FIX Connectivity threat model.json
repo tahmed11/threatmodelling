@@ -155,7 +155,8 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Elevation of privilege",
-                  "title": "Client can elevate privileges on the FIX gateway."
+                  "title": "Client can elevate privileges on the FIX gateway.",
+                  "mitigation": "FIX gateway admin interface should be restricted to internal ANX network"
                 }
               ],
               "attrs": {
@@ -374,7 +375,15 @@
                   "type": "Information disclosure",
                   "title": "Information disclosure of sensitive information",
                   "description": "Information disclosure can be through variety of methods such as unrestricted API, debugging message. In this case information disclosure can be through unauthenticated APIs. Ensure all APIs performing sensitive functions are authenticated.",
-                  "mitigation": "Authentication"
+                  "mitigation": "Authentication checks"
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Repudiation",
+                  "title": "repudiation - messages sent from FIX gateway should have integrity check whether it has been sent from FIX gateway",
+                  "description": "For example: Rogue user sent rogue message (Put an order) to the market to Market Grid via MG API.",
+                  "mitigation": "Message integrity checks and authentication checks for sensitive operations."
                 }
               ],
               "attrs": {
