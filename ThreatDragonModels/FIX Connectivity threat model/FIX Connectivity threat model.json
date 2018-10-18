@@ -78,7 +78,16 @@
               "target": {
                 "id": "f6b63756-1834-4c65-8524-a53a60b4ceda"
               },
-              "vertices": [],
+              "vertices": [
+                {
+                  "x": 373,
+                  "y": 78
+                },
+                {
+                  "x": 392,
+                  "y": 77
+                }
+              ],
               "id": "aaf63304-c6fa-4ca9-8074-8a5218e917ed",
               "labels": [
                 {
@@ -96,14 +105,39 @@
                 }
               ],
               "z": 3,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "protocol": "FIX",
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "title": "Spoofing FIX messages (one user pretending to be another user).",
+                  "mitigation": "Dedicated leased line between customer and FIX gateway. Still one client can spoof messages for another user."
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "title": "The channel is not encrypted hence man in the middle attack possible",
+                  "mitigation": "dedicated leased line between client and ANX",
+                  "description": "since the channel is not encrypted an attacker can be in the middle of the connection between client and ANX and can modify messages sent between the two parties."
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Repudiation",
+                  "title": "Similar as spoofing",
+                  "description": "repudiation - for example client placing an order but denying that the order was placed.",
+                  "mitigation": "authentication between client an FIX gateway before transaction can occur."
+                }
+              ],
               "attrs": {
                 ".marker-target": {
-                  "class": "marker-target hasNoOpenThreats isInScope"
+                  "class": "marker-target hasOpenThreats isInScope"
                 },
                 ".connection": {
-                  "class": "connection hasNoOpenThreats isInScope"
+                  "class": "connection hasOpenThreats isInScope"
                 }
               }
             },
