@@ -139,7 +139,9 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Information disclosure",
-                  "title": "Information disclosure about the system and other clients"
+                  "title": "Information disclosure about the system and other clients",
+                  "description": "Information disclosure can be through variety of methods such as unrestricted API, debugging message, etc. In this case information disclosure can be through malformed FIX messages.",
+                  "mitigation": "Message validation and authorization checks should be done wherever applicable. for example: one client asking for order details of another client."
                 },
                 {
                   "status": "Open",
@@ -357,6 +359,22 @@
                   "title": "Spoofing of messages sent from FIX gateway to Market Grid",
                   "description": "rogue system can send rogue messages to market grid pretending to be FIX gateway and place an order.",
                   "mitigation": "Use authentication such as (two way mutual SSL) so only FIX gateway can send message to Market grid"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "title": "Tampering of data in transit",
+                  "description": "Man in the middle attack between FIX gateway and market grid",
+                  "mitigation": "Use Encrypted channel such as HTTPS"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "title": "Information disclosure of sensitive information",
+                  "description": "Information disclosure can be through variety of methods such as unrestricted API, debugging message. In this case information disclosure can be through unauthenticated APIs. Ensure all APIs performing sensitive functions are authenticated.",
+                  "mitigation": "Authentication"
                 }
               ],
               "attrs": {
