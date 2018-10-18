@@ -434,6 +434,21 @@
                   "title": "Spoofing of messages from MG to Engine service and vice versa.",
                   "description": "rogue system can send rogue messages (such as place an order) to Engine service pretending to be market grid.",
                   "mitigation": "Use authentication checks before any sensitive operations."
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "title": "Tampering of data between MG and Engine service",
+                  "mitigation": "use TLS"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "title": "Information disclosure",
+                  "mitigation": "",
+                  "description": "Information disclosure can be through variety of methods such as unrestricted API, debugging message. In this isntance information disclosure can be through unauthenticated MQ listeners/publishers . Ensure all listeners, publishers performing sensitive functions are authenticated."
                 }
               ],
               "attrs": {
