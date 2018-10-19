@@ -108,8 +108,9 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Spoofing",
-                  "title": "Spoofing FIX messages (one user pretending to be another user).",
-                  "mitigation": "Dedicated leased line between customer and FIX gateway (only selected users).\nPerform authentication and authorization of client before performing any sensitive operation."
+                  "title": "Spoofing FIX messages (one client pretending to be another client).",
+                  "mitigation": "Dedicated leased line between customer and FIX gateway (only selected users).\nPerform authentication and authorization of client before performing any sensitive operation.",
+                  "description": "A client sending spoof messages (such as placing a malicious order to FIX gateway) on behalf of another client. Sensitive operations such as PlaceOrder, CancelOrder, ExecutionReport,etc should be validated before execution."
                 },
                 {
                   "status": "Open",
@@ -274,7 +275,7 @@
                   "severity": "Low",
                   "type": "Spoofing",
                   "title": "Spoofing of data sent from FIX gateway to Engine Service",
-                  "mitigation": "Use HTTPS channel",
+                  "mitigation": "Use HTTPS channel and only accept authentication messages from FIX gateway interface.",
                   "description": "Attacker sending forged authentication messages to Engine service"
                 },
                 {
@@ -432,15 +433,16 @@
                   "severity": "Medium",
                   "type": "Tampering",
                   "title": "Tampering of data between MG and Engine service",
-                  "mitigation": "use TLS"
+                  "mitigation": "enable encryption in ZEROMQ",
+                  "description": "If a cleartext protocol is used any system who has access to the network can listen to the data in transit."
                 },
                 {
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Information disclosure",
                   "title": "Information disclosure",
-                  "mitigation": "",
-                  "description": "Information disclosure can be through variety of methods such as unrestricted API, debugging message. In this isntance information disclosure can be through unauthenticated MQ listeners/publishers . Ensure all listeners, publishers performing sensitive functions are authenticated."
+                  "mitigation": "Ensure all listeners, publishers performing sensitive functions are authenticated.",
+                  "description": "Information disclosure can be through variety of methods such as unrestricted API, debugging message. In this isntance information disclosure can be through unauthenticated MQ listeners/publishers ."
                 }
               ],
               "attrs": {
