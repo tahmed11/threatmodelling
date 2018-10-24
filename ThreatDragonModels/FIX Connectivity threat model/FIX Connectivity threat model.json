@@ -190,8 +190,8 @@
                 "height": 100
               },
               "position": {
-                "x": 628,
-                "y": 187
+                "x": 571,
+                "y": 193
               },
               "angle": 0,
               "id": "4786c1db-9f4d-46af-b2df-05828ce54123",
@@ -232,83 +232,6 @@
                 },
                 ".element-text": {
                   "class": "element-text hasNoOpenThreats isInScope"
-                }
-              }
-            },
-            {
-              "type": "tm.Flow",
-              "smooth": true,
-              "source": {
-                "id": "f6b63756-1834-4c65-8524-a53a60b4ceda"
-              },
-              "target": {
-                "id": "4786c1db-9f4d-46af-b2df-05828ce54123"
-              },
-              "vertices": [
-                {
-                  "x": 550,
-                  "y": 232
-                }
-              ],
-              "id": "2208e4e7-76fa-4b3b-8cd5-b7d3f6254728",
-              "labels": [
-                {
-                  "position": {
-                    "distance": 0.46220481593444585,
-                    "offset": -0.1576304929330945
-                  },
-                  "attrs": {
-                    "text": {
-                      "text": "Auth (HTTPS?)",
-                      "font-weight": "400",
-                      "font-size": "small"
-                    }
-                  }
-                }
-              ],
-              "z": 7,
-              "hasOpenThreats": true,
-              "protocol": "HTTP",
-              "isEncrypted": true,
-              "threats": [
-                {
-                  "status": "Open",
-                  "severity": "Low",
-                  "type": "Spoofing",
-                  "title": "Spoofing of data sent from FIX gateway to Engine Service",
-                  "mitigation": "Use HTTPS channel and only accept authentication messages from FIX gateway interface.",
-                  "description": "Attacker sending forged authentication messages to Engine service"
-                },
-                {
-                  "status": "Open",
-                  "severity": "Medium",
-                  "type": "Tampering",
-                  "title": "Tampering of data sent between FIX gateway and Engine service",
-                  "mitigation": "Use encrypted channel such as HTTPS"
-                },
-                {
-                  "status": "Open",
-                  "severity": "Medium",
-                  "type": "Information disclosure",
-                  "title": "Information disclosure of the authentication details",
-                  "description": "Information disclosure can be through variety of methods such as unrestricted API, debugging message. In this case information disclosure can be through giving specific user details when authentication is unsuccessful such as \"Password is wrong\".  When authentication is done a generic error message should be provided such as \"invalid username/password\"",
-                  "mitigation": "Generic error message"
-                },
-                {
-                  "status": "Open",
-                  "severity": "Low",
-                  "type": "Denial of service",
-                  "title": "Denial of service by sending junk forged messages",
-                  "description": "flooding the engine service  system with junk authentication messages so legitimate authentication message will be denied",
-                  "mitigation": "Use API gateway with Denial of service protection or rate throttling requests."
-                }
-              ],
-              "attrs": {
-                ".marker-target": {
-                  "class": "marker-target hasOpenThreats isInScope"
-                },
-                ".connection": {
-                  "class": "connection hasOpenThreats isInScope"
                 }
               }
             },
@@ -406,7 +329,7 @@
                   "position": 0.5,
                   "attrs": {
                     "text": {
-                      "text": "MQ (Encrypted?)",
+                      "text": "ZeroMQ\n(UnEncrypted)",
                       "font-weight": "400",
                       "font-size": "small"
                     }
