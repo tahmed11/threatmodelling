@@ -109,12 +109,12 @@
                   "severity": "High",
                   "type": "Spoofing",
                   "title": "Spoofing FIX messages (one client pretending to be another client).",
-                  "mitigation": "Dedicated leased line between customer and FIX gateway (only selected users).\nPerform authentication and authorization of client before performing any sensitive operation.",
+                  "mitigation": "Dedicated leased line between customer and FIX gateway (only selected users).\nPerform authentication and authorization of client before performing any sensitive operation.\nPassword strength will be defined and enforced by marketgrid.\nAuthorization checks to be provided?",
                   "description": "A client sending spoof messages (such as placing a malicious order to FIX gateway) on behalf of another client. Sensitive operations such as PlaceOrder, CancelOrder, ExecutionReport,etc should be validated before execution."
                 },
                 {
                   "status": "Open",
-                  "severity": "High",
+                  "severity": "Low",
                   "type": "Tampering",
                   "title": "The channel is not encrypted hence man in the middle attack possible",
                   "mitigation": "dedicated leased line between client and ANX",
@@ -122,11 +122,11 @@
                 },
                 {
                   "status": "Open",
-                  "severity": "High",
+                  "severity": "Medium",
                   "type": "Repudiation",
                   "title": "Repudiation of messages - Actor denying messages sent by them",
                   "description": "repudiation - for example client placing an order but denying that the order was placed.",
-                  "mitigation": "authentication between client an FIX gateway before any sensitive operation occur."
+                  "mitigation": "authentication between client an FIX gateway before any sensitive operation occur\nPeform logging on the FIX gateway for all client acitvities."
                 },
                 {
                   "status": "Open",
@@ -141,7 +141,7 @@
                   "severity": "Low",
                   "type": "Denial of service",
                   "title": "Client sending large number of traffic to the FIX gateway",
-                  "mitigation": "FIX gateway - not opened to the internet.\nLoadbalancer to reduce impact to DoS\nFirewall to filter traffic",
+                  "mitigation": "FIX gateway - not opened to the internet.\nLoadbalancer to reduce impact to DoS\nFirewall to filter traffic.\nFIX gateway to implement some throttling mechanism of messages.",
                   "description": "client sending large amount of traffic to the FIX gateway so ANX cannt process legitimate request"
                 },
                 {
@@ -149,7 +149,8 @@
                   "severity": "Low",
                   "type": "Elevation of privilege",
                   "title": "Client can elevate privileges on the FIX gateway.",
-                  "mitigation": "FIX gateway admin interface should be restricted to internal ANX network"
+                  "mitigation": "FIX gateway admin interface should be restricted to internal ANX network",
+                  "description": "Require further investigation"
                 }
               ],
               "attrs": {
@@ -201,7 +202,7 @@
                   "class": "element-shape hasNoOpenThreats isInScope"
                 },
                 "text": {
-                  "text": "Engine Service"
+                  "text": "Engine Service/\nTrading Service"
                 },
                 ".element-text": {
                   "class": "element-text hasNoOpenThreats isInScope"
@@ -320,12 +321,7 @@
               "target": {
                 "id": "b95101ec-0769-415e-83ae-51a5eaee4f55"
               },
-              "vertices": [
-                {
-                  "x": 633,
-                  "y": 44
-                }
-              ],
+              "vertices": [],
               "id": "c2a92d1f-cfe2-428a-9f87-5a493c7c27e0",
               "labels": [
                 {
@@ -335,7 +331,7 @@
                   },
                   "attrs": {
                     "text": {
-                      "text": "API (HTTP?)",
+                      "text": "API (ZeroMQ)",
                       "font-weight": "400",
                       "font-size": "small"
                     }
@@ -352,27 +348,27 @@
                   "type": "Spoofing",
                   "title": "Spoofing of messages sent from FIX gateway to Market Grid",
                   "description": "rogue system can send rogue messages to market grid pretending to be FIX gateway and place an order.",
-                  "mitigation": "Use authentication such as (two way mutual SSL) so only FIX gateway can send message to Market grid"
+                  "mitigation": "Authentication is setup between FIX gateway and marketgrid. each client will have one set of credentials for FIX and MG."
                 },
                 {
                   "status": "Open",
-                  "severity": "Medium",
+                  "severity": "Low",
                   "type": "Tampering",
                   "title": "Tampering of data in transit",
                   "description": "Man in the middle attack between FIX gateway and market grid",
-                  "mitigation": "Use Encrypted channel such as HTTPS"
+                  "mitigation": "Use Encrypted channel such as HTTPS (not implemented).\nIP level filtering has been done so only FIX gateway can talk with market grid."
                 },
                 {
                   "status": "Open",
-                  "severity": "Medium",
+                  "severity": "Low",
                   "type": "Information disclosure",
                   "title": "Information disclosure of sensitive information",
                   "description": "Information disclosure can be through variety of methods such as unrestricted API, debugging message. In this case information disclosure can be through unauthenticated APIs. Ensure all APIs performing sensitive functions are authenticated.",
-                  "mitigation": "Authentication checks"
+                  "mitigation": "Authentication checks has not been done. \nBut the APIs has only been restricted to certain boxes."
                 },
                 {
                   "status": "Open",
-                  "severity": "High",
+                  "severity": "Low",
                   "type": "Repudiation",
                   "title": "repudiation - messages sent from FIX gateway should have integrity check whether it has been sent from FIX gateway",
                   "description": "For example: Rogue user sent rogue message (Put an order) to the market to Market Grid via MG API.",
