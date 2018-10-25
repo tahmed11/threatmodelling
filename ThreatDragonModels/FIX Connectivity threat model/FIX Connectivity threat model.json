@@ -190,8 +190,8 @@
                 "height": 100
               },
               "position": {
-                "x": 571,
-                "y": 193
+                "x": 294,
+                "y": 324
               },
               "angle": 0,
               "id": "4786c1db-9f4d-46af-b2df-05828ce54123",
@@ -216,8 +216,8 @@
                 "height": 100
               },
               "position": {
-                "x": 711,
-                "y": 12
+                "x": 472,
+                "y": 164
               },
               "angle": 0,
               "id": "b95101ec-0769-415e-83ae-51a5eaee4f55",
@@ -319,13 +319,12 @@
                 "id": "4786c1db-9f4d-46af-b2df-05828ce54123"
               },
               "target": {
-                "x": 812,
-                "y": 62
+                "id": "b95101ec-0769-415e-83ae-51a5eaee4f55"
               },
               "vertices": [
                 {
-                  "x": 814,
-                  "y": 183
+                  "x": 521,
+                  "y": 330
                 }
               ],
               "id": "bbd60a41-465d-426a-ace8-b67afb82b1f2",
@@ -367,6 +366,84 @@
                   "title": "Information disclosure",
                   "mitigation": "Ensure all listeners, publishers performing sensitive functions are authenticated.\nMG and engine service are in a segregated subnet and not exposed to the internal networks.",
                   "description": "Information disclosure can be through variety of methods such as unrestricted API, debugging message. In this instance information disclosure can be through unauthenticated MQ listeners/publishers ."
+                }
+              ],
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Store",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 606,
+                "y": 253
+              },
+              "angle": 0,
+              "id": "1504a323-a084-444b-9389-1f10b22e1bf6",
+              "z": 10,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "postgresql/KDB db"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "b95101ec-0769-415e-83ae-51a5eaee4f55"
+              },
+              "target": {
+                "id": "1504a323-a084-444b-9389-1f10b22e1bf6"
+              },
+              "vertices": [
+                {
+                  "x": 640,
+                  "y": 208
+                }
+              ],
+              "id": "8c1f9296-1d82-4917-8dbf-7b3c8104e83c",
+              "labels": [
+                {
+                  "position": {
+                    "distance": 0.5845669466753572,
+                    "offset": -19.726339653134346
+                  },
+                  "attrs": {
+                    "text": {
+                      "text": "JDBC",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 11,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "title": "Data stored at DB should be encrypted",
+                  "description": "If data stored at database is not encrypted.",
+                  "mitigation": "Encrypt postgresql database"
                 }
               ],
               "attrs": {
