@@ -160,7 +160,7 @@
                   "position": 0.5,
                   "attrs": {
                     "text": {
-                      "text": "Login with Google",
+                      "text": "1. Login with Google",
                       "font-weight": "400",
                       "font-size": "small"
                     }
@@ -194,7 +194,7 @@
                   "position": 0.5,
                   "attrs": {
                     "text": {
-                      "text": "Redirect to\nAuthroization server",
+                      "text": "2. Redirect to\nAuthroization server",
                       "font-weight": "400",
                       "font-size": "small"
                     }
@@ -206,6 +206,48 @@
               "protocol": "HTTPS",
               "isEncrypted": true,
               "isPublicNetwork": true,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "cfbb49af-4955-4e67-9aad-a55e25b033b1"
+              },
+              "target": {
+                "id": "da331dae-b984-4a42-8e50-2b9e044e8946"
+              },
+              "vertices": [
+                {
+                  "x": 575,
+                  "y": 28
+                }
+              ],
+              "id": "caffd99e-d374-4abe-b141-5566ae4fa5aa",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "3. Request consent\nfrom user",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 11,
+              "hasOpenThreats": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "HTTPS",
               "attrs": {
                 ".marker-target": {
                   "class": "marker-target hasNoOpenThreats isInScope"
