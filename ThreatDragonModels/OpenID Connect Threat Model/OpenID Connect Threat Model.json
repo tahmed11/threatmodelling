@@ -226,14 +226,17 @@
               },
               "vertices": [
                 {
-                  "x": 575,
+                  "x": 580,
                   "y": 28
                 }
               ],
               "id": "caffd99e-d374-4abe-b141-5566ae4fa5aa",
               "labels": [
                 {
-                  "position": 0.5,
+                  "position": {
+                    "distance": 0.5024577585060077,
+                    "offset": 14.061286219221074
+                  },
                   "attrs": {
                     "text": {
                       "text": "3. Request consent\nfrom user",
@@ -248,6 +251,89 @@
               "isEncrypted": true,
               "isPublicNetwork": true,
               "protocol": "HTTPS",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "cfbb49af-4955-4e67-9aad-a55e25b033b1"
+              },
+              "target": {
+                "id": "997ca320-aab5-4f9f-a336-474b5d00a29e"
+              },
+              "vertices": [
+                {
+                  "x": 669,
+                  "y": 386
+                }
+              ],
+              "id": "316e431f-9db9-4a91-8e83-13183505a6e2",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "5. Redirect URI with\nauthorization code",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 12,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "x": 319,
+                "y": 178
+              },
+              "target": {
+                "x": 808,
+                "y": 191
+              },
+              "vertices": [
+                {
+                  "x": 568,
+                  "y": 80
+                }
+              ],
+              "id": "e9e78506-9205-4c92-9a5e-084a5813d938",
+              "labels": [
+                {
+                  "position": {
+                    "distance": 0.5176964917688603,
+                    "offset": 19.939146175980568
+                  },
+                  "attrs": {
+                    "text": {
+                      "text": "4. Grant access",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 13,
+              "hasOpenThreats": false,
               "attrs": {
                 ".marker-target": {
                   "class": "marker-target hasNoOpenThreats isInScope"
