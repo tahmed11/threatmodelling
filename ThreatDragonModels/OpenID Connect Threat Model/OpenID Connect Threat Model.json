@@ -1,0 +1,11 @@
+{
+  "summary": {
+    "title": "OpenID Connect Threat Model",
+    "owner": "Tanvir Ahmed",
+    "description": "Demo Threat model of OpenID Connect using Google OAuth Playground\nhttps://developers.google.com/oauthplayground/"
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": []
+  }
+}
