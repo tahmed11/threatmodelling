@@ -10,7 +10,217 @@
       {
         "title": "OpenID Connect",
         "thumbnail": "./public/content/images/thumbnail.jpg",
-        "id": 0
+        "id": 0,
+        "diagramJson": {
+          "cells": [
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 157,
+                "y": 177
+              },
+              "angle": 0,
+              "id": "da331dae-b984-4a42-8e50-2b9e044e8946",
+              "z": 2,
+              "hasOpenThreats": false,
+              "outOfScope": true,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isOutOfScope"
+                },
+                "text": {
+                  "text": "End user/Resource\nowner"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 807,
+                "y": 174
+              },
+              "angle": 0,
+              "id": "cfbb49af-4955-4e67-9aad-a55e25b033b1",
+              "z": 5,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Authorization\nserver"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 437,
+                "y": 171
+              },
+              "angle": 0,
+              "id": "997ca320-aab5-4f9f-a336-474b5d00a29e",
+              "z": 6,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Client - OAuth\nPlayground"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Boundary",
+              "smooth": true,
+              "source": {
+                "x": 294,
+                "y": 73
+              },
+              "target": {
+                "x": 273,
+                "y": 395
+              },
+              "vertices": [
+                {
+                  "x": 364,
+                  "y": 164
+                },
+                {
+                  "x": 376,
+                  "y": 254
+                }
+              ],
+              "id": "2ee874fc-a265-4b94-88ae-30f115d1c77a",
+              "z": 7,
+              "attrs": {}
+            },
+            {
+              "type": "tm.Boundary",
+              "smooth": true,
+              "source": {
+                "x": 834,
+                "y": 14
+              },
+              "target": {
+                "x": 804,
+                "y": 406
+              },
+              "vertices": [
+                {
+                  "x": 736,
+                  "y": 235
+                }
+              ],
+              "id": "2988ab6c-33ab-43d6-91c3-87910cf28f61",
+              "z": 8,
+              "attrs": {}
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "x": 241,
+                "y": 254
+              },
+              "target": {
+                "id": "997ca320-aab5-4f9f-a336-474b5d00a29e"
+              },
+              "vertices": [
+                {
+                  "x": 364,
+                  "y": 318
+                }
+              ],
+              "id": "041ace7d-e41e-47a6-a17e-9667fe18e423",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Login with Google",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 9,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "997ca320-aab5-4f9f-a336-474b5d00a29e"
+              },
+              "target": {
+                "id": "cfbb49af-4955-4e67-9aad-a55e25b033b1"
+              },
+              "vertices": [],
+              "id": "990f236f-94cf-4389-8767-ebbf02d83708",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Redirect to\nAuthroization server",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 10,
+              "hasOpenThreats": false,
+              "protocol": "HTTPS",
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            }
+          ]
+        },
+        "size": {
+          "height": 1146.2646484375,
+          "width": 1403.2000732421875
+        }
       }
     ]
   }
