@@ -438,7 +438,7 @@
               "threats": [
                 {
                   "status": "Open",
-                  "severity": "Medium",
+                  "severity": "High",
                   "title": "CSRF attack against redirect URI",
                   "type": "Spoofing",
                   "description": "CSRF attacks  on OAuth approvals can allow an attacker to obtain authorization to  OAuth protected resources without the consent of the user.  This attack works against the redirect URI used in the authorization    \"code\" flow.  An attacker could authorize an authorization \"code\" to  their own protected resources on an authorization server.  He then  aborts the redirect flow back to the client on his device and tricks  the victim into executing the redirect back to the client.  The  client receives the redirect, fetches the token(s) from the    authorization server, and associates the victim's client session with  the resources accessible using the token.\n Impact: The user accesses resources on behalf of the attacker.  The effective impact depends on the type of resource accessed.  For example, the user may upload private items to an attacker's  resources.",
