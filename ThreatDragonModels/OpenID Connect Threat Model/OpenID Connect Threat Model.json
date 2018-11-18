@@ -299,13 +299,23 @@
                 }
               ],
               "z": 12,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "title": "Impersonating attack using unvalidated ID Token",
+                  "type": "Spoofing",
+                  "description": "Validate ID token received from the authorization server to ensure ID token is indeed received  from the right source or not tampered. \n\nImpact: A malicious attacker can impersonate his request to the client application and get resources from your application on behalf of the victim.",
+                  "mitigation": "Validation of the ID token:\nVerify that the ID token is properly signed by the issuer using one of the certificates found at the URI specified. \nVerify that the value of iss in the ID token is equal to the authorization server's endpoint. \nVerify that the value of aud in the ID token is equal to your app’s client ID.\nVerify that the expiry time (exp) of the ID token has not passed."
+                }
+              ],
               "attrs": {
                 ".marker-target": {
-                  "class": "marker-target hasNoOpenThreats isInScope"
+                  "class": "marker-target hasOpenThreats isInScope"
                 },
                 ".connection": {
-                  "class": "connection hasNoOpenThreats isInScope"
+                  "class": "connection hasOpenThreats isInScope"
                 }
               }
             },
